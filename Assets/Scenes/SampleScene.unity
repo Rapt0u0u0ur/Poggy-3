@@ -224,6 +224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c957a4fb449f4047a57cbe90682a2ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnedDirection: 2
   testCar: {fileID: 1850343667147513999, guid: db94cc536a6aeef4bbfc64cdc3cae584, type: 3}
 --- !u!1001 &549684111
 PrefabInstance:
