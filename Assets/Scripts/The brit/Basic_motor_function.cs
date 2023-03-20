@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Basic_motor_function : MonoBehaviour
 {
-    Vector3 Goal_2;
-    Vector3 Goal;
-    Vector2 SprintGoal;
+    public Vector3 Goal_2;
+    public Vector3 Goal;
+    public Vector2 SprintGoal;
     bool Sprinting;
     public float speed;
     // Start is called before the first frame update

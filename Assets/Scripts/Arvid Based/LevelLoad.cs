@@ -12,11 +12,13 @@ public class LevelLoad : MonoBehaviour
 
     public Vector3 minspot, maxspot;
 
-    // Update is called once per frame
+
     void LateUpdate()
     {
         if (transform.position != player.position)
         {
+            targetspot = player.position;
+
             Vector3 camBoundaryPos = new Vector3(
                 Mathf.Clamp(targetspot.x, minspot.x, maxspot.x),
                 Mathf.Clamp(targetspot.y, minspot.y, maxspot.y),
