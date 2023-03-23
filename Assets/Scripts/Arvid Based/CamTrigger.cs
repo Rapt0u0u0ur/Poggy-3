@@ -4,28 +4,22 @@ using UnityEngine;
 
 public class CamTrigger : MonoBehaviour
 {
-    public bool Right;
-    public bool Up;
-    public Vector3 newCamPos, newPlayerPos;
-
-    CamController camControl;
 
 
-    void Start()
+    public float PlayerX;
+    public float PlayerY;
+
+    public float CameraX;
+    public float CameraY;
+
+
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        camControl = Camera.main.GetComponent<CamController>();
+       collision.gameObject.transform.position = new Vector2(transform.position.x + PlayerX, transform.position.y + PlayerY);
+        var screen = GameObject.Find("Main Camera");
+        screen.transform.position = new Vector3(transform.position.x + CameraX, transform.position.y + CameraY, -10);
+
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-     //   if (gameObject.tag == "Player")
-        {
-          //  camControl.minPos += newCamPos;
-          //  camControl.maxPos += newCamPos;
-
-          //  transform.position += newPlayerPos;
-        }
-
-
-    }
+    
 }

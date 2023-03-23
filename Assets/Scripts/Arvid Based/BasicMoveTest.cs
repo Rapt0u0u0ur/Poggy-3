@@ -7,13 +7,7 @@ public class BasicMoveTest : MonoBehaviour
     public int playermoveX;
     public int playermoveY;
     public int speed;
-    CamController camControl;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        camControl = Camera.main.GetComponent<CamController>();
-    }
 
     // Update is called once per frame
     void Update()
@@ -22,13 +16,19 @@ public class BasicMoveTest : MonoBehaviour
         {
             transform.position = new Vector2(transform.position.x - speed * Time.deltaTime, transform.position.y);
         }
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Wall")
-        { 
-            transform.position = new Vector2(transform.position.x + playermoveX, transform.position.y + playermoveY); 
+        if (Input.GetKey(KeyCode.D))
+        {
+            transform.position = new Vector2(transform.position.x + speed * Time.deltaTime, transform.position.y);
+        }
+        if (Input.GetKey(KeyCode.W))
+        {
+            transform.position = new Vector2(transform.position.x, transform.position.y + speed * Time.deltaTime);
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            transform.position = new Vector2(transform.position.x, transform.position.y - speed * Time.deltaTime);
         }
     }
+
+
 }
