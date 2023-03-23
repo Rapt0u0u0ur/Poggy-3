@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 448793511}
   m_Layer: 0
   m_Name: left
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -194,8 +194,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8996e2b5b7235b84d909e2d5ef448594, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newCamSpot: {x: -16, y: 0, z: 0}
-  newPlayerSpot: {x: -5, y: 0, z: 0}
+  newCamPos: {x: -16, y: 0, z: 0}
+  newPlayerPos: {x: -5, y: 0, z: 0}
 --- !u!1 &1298397067
 GameObject:
   m_ObjectHideFlags: 0
@@ -206,6 +206,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1298397069}
   - component: {fileID: 1298397068}
+  - component: {fileID: 1298397073}
   - component: {fileID: 1298397070}
   - component: {fileID: 1298397071}
   - component: {fileID: 1298397072}
@@ -276,7 +277,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1298397067}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.9761794, y: -0.45574304, z: 0}
+  m_LocalPosition: {x: -8.64, y: -0.45574304, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -290,13 +291,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1298397067}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a95d925a37722e344a3cb2e1b9df246d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Goal_2: {x: 0, y: 0, z: 0}
   Goal: {x: -10, y: 0, z: 0}
+  SprintGoal: {x: 0, y: 0}
   speed: 9
 --- !u!50 &1298397071
 Rigidbody2D:
@@ -345,6 +347,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1298397073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1298397067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ec140e41bdea564ebab04e94e4364ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameramove: -4
+  speed: 3
 --- !u!1 &1474650151
 GameObject:
   m_ObjectHideFlags: 0
@@ -4467,5 +4483,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1298397069}
   smoothspeed: 1
-  minspot: {x: 0, y: 0, z: -10}
-  maxspot: {x: 0, y: 0, z: -10}
+  minPos: {x: 0, y: 0, z: 0}
+  maxPos: {x: 0, y: 0, z: 0}
