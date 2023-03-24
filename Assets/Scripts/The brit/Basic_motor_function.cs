@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Basic_motor_function : MonoBehaviour
 {
+    public LayerMask Collision;
     public Vector3 Goal_2;
     public Vector3 Goal;
     public Vector2 SprintGoal;
@@ -45,6 +46,8 @@ public class Basic_motor_function : MonoBehaviour
     }
     void ActionDecider(int y, int x)
     {
+        if (Physics2D.OverlapBox(Goal + new Vector3(x, y), transform.localScale * 0.1f, Collision))
+            return;
         if (transform.position != Goal)
         {
             Goal_2 = Goal + new Vector3(x, y);
@@ -57,6 +60,5 @@ public class Basic_motor_function : MonoBehaviour
 
         if (Sprinting == true)
             SprintGoal = new Vector2(x, y);
-
     }
 }
